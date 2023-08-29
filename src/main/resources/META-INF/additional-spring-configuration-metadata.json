@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "welcome.some.config",
+  "type": "java.lang.String",
+  "description": "A description for 'welcome.some.config'"
+}]}

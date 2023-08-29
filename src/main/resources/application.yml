@@ -1,0 +1,68 @@
+server:
+  port: 8082
+
+spring:
+  profiles:
+    active: qa
+
+  # Step 22 multiple profiles for multiple databases
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 1239
+    url: jdbc:mysql://localhost:3306/testdb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  some:
+    config: Welcome to the world of Spring Boot
+
+---
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 1239
+    url: jdbc:mysql://localhost:3306/testdb-qa
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  some:
+    config: Welcome to the world of Spring Boot
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: env,beans
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 1239
+    url: jdbc:mysql://localhost:3306/testdb-prod
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  some:
+    config: Welcome to the world of Spring Boot
