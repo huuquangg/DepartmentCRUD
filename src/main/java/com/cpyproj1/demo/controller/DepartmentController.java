@@ -31,7 +31,7 @@ public class DepartmentController {
 
     // Step 14.2 - Validation with RequestBody
     @PostMapping("/departments")//     |
-    public Department saveDepartment(@Valid @RequestBody Department department) {
+    public Department insertDepartment(@Valid @RequestBody Department department) {
         LOGGER.info("Inside saveDepartment of DepartmentController"); // Step 15.1 - Logger
         return departmentService.saveDepartment(department);
     }
