@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 80x2+2
 
 spring:
   profiles:
@@ -13,8 +13,9 @@ spring:
       on-profile: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: 1239
-    url: jdbc:mysql://localhost:3306/testdb
+    # 
+    password: 
+    url: jdbc:mysql://localhost:3306/db_name
     username: root
   jpa:
     hibernate:
@@ -31,8 +32,8 @@ spring:
       on-profile: qa
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: 1239
-    url: jdbc:mysql://localhost:3306/testdb-qa
+    password: 
+    url: jdbc:mysql://localhost:3306/db_name
     username: root
   jpa:
     hibernate:
@@ -56,8 +57,8 @@ spring:
       on-profile: prod
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: 1239
-    url: jdbc:mysql://localhost:3306/testdb-prod
+    password: 
+    url: jdbc:mysql://localhost:3306/db_name
     username: root
   jpa:
     hibernate:
